@@ -1,8 +1,38 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url('assets/fonts/Gotham-Bold.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('assets/fonts/Gotham-Medium.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('assets/fonts/Gotham-Book.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('assets/fonts/Gotham-Thin.otf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/*disable scrolling*/
+/* html, body {margin: 0; height: 100%; overflow: hidden} */
+
 body {
+  background-color: #F0F2F6;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Gotham", "Roboto", "Helvetica Neue", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +40,45 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.ant-input {
+  border-radius: 25px;
+  border: none;
+  margin: 5px 0; /*top-5px bottom-0*/
+  color: #4275FF;
+  padding-left: 15px;
+}
+
+.ant-input:hover {
+  border-width: 2px;
+}
+
+.ant-input:focus {
+  border: 2px solid #4275FF;
+}
+
+.ant-input::placeholder {
+  color:#BECFFF;
+}
+
+.ant-btn {
+  border-radius: 25px;
+  border: none;
+  color: #4275FF;
+  background: white;
+}
+
+.ant-btn-primary {
+  background: #4275FF;
+  background: linear-gradient(295deg, rgba(156,222,255,1) -5%, rgba(0,137,255,1) 60%);
+  color: white;
+}
+
+.ant-btn-link,
+.ant-btn-link:hover,
+.ant-btn-link:focus {
+  background: none;
+  border:none;
 }

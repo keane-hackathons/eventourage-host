@@ -1,0 +1,82 @@
+.backdrop {
+  position: fixed;
+  top: -45vh;
+  right: -75vw;
+}
+
+form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.fields-box {
+  width: 70vw;
+  margin: 0 auto 10vh;
+}
+
+.fields-box h1 {
+  color: #293647;
+  float: left;
+}
+
+.fields-box .ant-input {
+  width: 100%;
+  background-color: rgba(156, 222, 255, .2);
+  min-height: 30px;
+  height: 5vh;
+}
+
+.fields-box .ant-form-explain {
+  font-size: 0.6rem;
+  color: red;
+}
+
+.fields-box button {
+  float: right;
+}
+
+.fields-box button span:after,
+.fields-box button span:after {
+  content: '';
+  width: 0px;
+  height: 3px;
+  display: block;
+  background: #4275FF;
+  transition: 300ms;
+}
+
+.fields-box button:hover span:after,
+.fields-box button:hover span:after {
+  width: 100%;
+}
+
+.btns-box {
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.btns-box .ant-btn {
+  width: 50%;
+  min-height: 40px;
+  height: 8vh;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btns-box .ant-btn:nth-child(1) {
+  border-radius: 0 35px 0 0;
+}
+
+.btns-box .ant-btn:nth-child(2) {
+  width: 50%;
+  border-radius: 35px 0 0 0;
+}
+
+form p {
+  /* width:100%; */
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+

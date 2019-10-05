@@ -4,6 +4,7 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import axios from 'axios'
 
+import 'antd/dist/antd.css';
 import './index.css';
 
 import * as serviceWorker from './serviceWorker';
