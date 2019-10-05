@@ -1,15 +1,46 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
+
+import {Typography, Button, Tabs } from 'antd';
 import './App.css';
+
+const { Title } = Typography;
+const { TabPane } = Tabs;
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>meNTUor <br/> Coming Soon!</p>
-        </header>
+        <div className="profile-bar">
+          <div>
+            <Title level={2}>Hey Johnson,</Title>
+            <Title style={{color: "#8592A6"}} level={3}>What shall we do?</Title>
+          </div>
+          <div className="profile-pic"></div>
+        </div>
+
+        <div className="shelf"></div>
+        <div className="btns-container">
+          <Button>book a<br/>mentor</Button>
+          <Button>view week<br/>schedule</Button>
+          <Button>view past<br/>sessions</Button>
+
+        </div>
+
+        <div className="actions-hub">
+          <Tabs
+            defaultActiveKey="1"
+            tabBarGutter={0}
+          >
+            <TabPane tab="Upcoming" key="1">
+              <br/><br/>
+              Hmm... Nothing here.
+            </TabPane>
+            <TabPane tab="Notifications" key="2">
+              <br/><br/>
+              Hmm... Nothing here.
+            </TabPane>
+          </Tabs>
+        </div>
       </div>
     );
   }

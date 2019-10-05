@@ -79,4 +79,8 @@ form p {
   font-size: 0.6rem;
 }
 
+.ant-tabs-ink-bar,
+.ant-tabs-ink-bar-animated {
+  width: 10vw;
+}
 

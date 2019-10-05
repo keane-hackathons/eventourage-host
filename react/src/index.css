@@ -82,3 +82,7 @@ code {
   background: none;
   border:none;
 }
+
+.ant-avatar-circle {
+  border-radius: 50%;
+}

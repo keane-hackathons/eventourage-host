@@ -1,22 +1,155 @@
 .App {
-  text-align: center;
+  padding: 3% 5%; /* vertical | horizontal */
 }
 
-.App-logo {
-  height: 40vmin;
+/* ------- PROFILE ------- */
+.profile-bar {
+  height: 15vh;
+  padding-top: 3.5vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profile-bar h2.ant-typography,
+.profile-bar h3.ant-typography{
+  margin: 0;
+}
+
+.profile-bar > div {
+  display: inline-block;
+}
+
+.profile-pic {
+  float: right;
+  width: 50px;
+  height: 50px;
+  margin: 1.5vh 0; /* vertical | horizontal */
+  border-radius: 50%;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+/* ------- BUTTONS SHELF ------- */
+.btns-container {
+  width: 97vw;
+  margin: 1.5vh auto;
+  height: 30vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space:nowrap;
+
+  /* padding-right: 30px; */
+  /* display: grid;
+  grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: repeat(6, calc(50% - var(--gutter) * 2));
+  grid-template-rows: minmax(150px, 1fr);
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(.75 * var(--gutter));
+  margin-bottom: calc(-.25 * var(--gutter)); */
+}
+
+.btns-container .ant-btn {
+  min-width: 120px;
+  min-height: 140px;
+  width: 29%;
+  height: 85%;
+  max-width: 260px;
+  max-height: 380px;
+  margin: 0 3vw;
+  font-weight: bold;
+  color: #293647;
+  font-size: 1.2rem;
+  text-align: right;
+
+
+
+  /* scroll-snap-align: center;
+  padding: calc(var(--gutter) / 2 * 1.5);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px; */
 }
 
-.App-link {
-  color: #09d3ac;
+.btns-container .ant-btn span {
+  position: relative;
+  bottom: -5vh;
+  right: -1.2rem;
+}
+
+.btns-container .ant-btn:nth-child(1) {
+  background-color: #B7D1FA;
+  -webkit-box-shadow: 0px 20px 20px 0px rgba(183,209,250,0.35);
+  -moz-box-shadow: 0px 20px 20px 0px rgba(183,209,250,0.35);
+  box-shadow: 0px 20px 20px 0px rgba(183,209,250,0.35);
+}
+
+.btns-container .ant-btn:nth-child(2) {
+  background-color: #CCEEFF;
+  -webkit-box-shadow: 0px 20px 20px 0px rgba(156,222,255,0.35);
+  -moz-box-shadow: 0px 20px 20px 0px rgba(156,222,255,0.35);
+  box-shadow: 0px 20px 20px 0px rgba(156,222,255,0.35);
+}
+
+.btns-container .ant-btn:nth-child(3) {
+  background-color: #F8E2A9;
+  -webkit-box-shadow: 0px 20px 20px 0px rgba(247,206,104,0.35);
+  -moz-box-shadow: 0px 20px 20px 0px rgba(247,206,104,0.35);
+  box-shadow: 0px 20px 20px 0px rgba(247,206,104,0.35);
+}
+
+.shelf {
+  background-color: white;
+  position: absolute;
+  height: 67vh;
+  width: 106.5vw;
+  overflow: hidden;
+  left: -5vw;
+  top: 35vh;
+  z-index: -1;
+}
+
+/* ------- ACTIONS HUB ------- */
+
+.actions-hub {
+  width: 100%;
+  margin-top: 2vh;
+}
+
+.actions-hub .ant-tabs-bar {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.actions-hub .ant-tabs-nav {
+  font-size: 1.4rem;
+}
+
+.actions-hub .ant-tabs-tab {
+  padding-left: 0;
+  color: #8592A6;
+}
+
+.actions-hub .ant-tabs-nav .ant-tabs-tab:hover,
+.actions-hub .ant-tabs-nav .ant-tabs-tab-active {
+  color: #293647;
+  font-weight: bold;
+}
+
+.actions-hub .ant-tabs-ink-bar,
+.actions-hub .ant-tabs-ink-bar-animated {
+  width: 45px !important;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+.actions-hub .ant-tabs-tabpane {
+  font-weight: bold;
+  color: #8592A6;
+  font-size: 1.3rem;
+  text-align: center;
 }
