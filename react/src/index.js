@@ -9,8 +9,9 @@ import './index.css';
 
 import * as serviceWorker from './serviceWorker';
 
-import App from './pages/Main/App';
 import Login from './pages/Auth/Login';
+import App from './pages/Main/App';
+import WeekSlots from './pages/Weekview/WeekSlots';
 
 axios.defaults.baseURL = "https://asia-east2-rakuentuor.cloudfunctions.net/api"
 
@@ -29,6 +30,12 @@ ReactDOM.render(
         path="/login"
         render={props => {
           return <Login {...props} />;
+        }}
+      />
+      <Route
+        path="/week"
+        render={props => {
+          return <WeekSlots {...props} />;
         }}
       />
       <Redirect to="/login" />

@@ -1,33 +1,33 @@
 @font-face {
   font-family: 'Gotham';
-  src: url('assets/fonts/Gotham-Bold.otf');
+  src: url('assets/fonts/Gotham-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gotham';
-  src: url('assets/fonts/Gotham-Medium.otf');
+  src: url('assets/fonts/Gotham-Medium.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gotham';
-  src: url('assets/fonts/Gotham-Book.otf');
+  src: url('assets/fonts/Gotham-Book.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gotham';
-  src: url('assets/fonts/Gotham-Thin.otf');
+  src: url('assets/fonts/Gotham-Thin.woff') format("woff");
   font-weight: 200;
   font-style: normal;
 }
 
 /*disable scrolling*/
-/* html, body {margin: 0; height: 100%; overflow: hidden} */
+html, body {margin: 0; height: 100%; overflow: hidden}
 
 body {
   background-color: #F0F2F6;
