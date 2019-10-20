@@ -1,10 +1,11 @@
 const admin = require("firebase-admin");
-
-var serviceAccount = require("./firebase-adminsdk.json");
+const serviceAccount = require("./firebase-adminsdk.json");
+const { databaseURL, storageBucket } = require('./config')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://ntucheduler.firebaseio.com"
+  databaseURL,
+  storageBucket
 });
 
 const db = admin.firestore()
