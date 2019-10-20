@@ -12,8 +12,9 @@ import * as serviceWorker from './serviceWorker';
 import Login from './pages/Auth/Login';
 import App from './pages/Main/App';
 import WeekSlots from './pages/Weekview/WeekSlots';
+import UploadFile from './pages/Upload/UploadFile';
 
-axios.defaults.baseURL = "https://asia-east2-rakuentuor.cloudfunctions.net/api"
+axios.defaults.baseURL = "https://asia-east2-ntucheduler.cloudfunctions.net/api"
 
 const hist = createBrowserHistory();
 
@@ -36,6 +37,13 @@ ReactDOM.render(
         path="/week"
         render={props => {
           return <WeekSlots {...props} />;
+        }}
+      />
+
+      <Route
+        path="/upload"
+        render={props => {
+          return <UploadFile {...props} />;
         }}
       />
       <Redirect to="/login" />

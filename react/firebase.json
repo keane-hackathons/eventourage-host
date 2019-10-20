@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "mentuor",
+    "site": "ntucheduler",
     "public": "build",
     "ignore": [
       "firebase.json",

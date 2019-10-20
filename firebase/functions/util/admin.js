@@ -4,7 +4,7 @@ var serviceAccount = require("./firebase-adminsdk.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://rakuentuor.firebaseio.com"
+  databaseURL: "https://ntucheduler.firebaseio.com"
 });
 
 const db = admin.firestore()
