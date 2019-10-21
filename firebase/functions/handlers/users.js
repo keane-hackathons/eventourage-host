@@ -91,55 +91,90 @@ exports.login = (req, res) => {
     });
 };
 
-exports.uploadTimetable = (req, res) => {
+exports.scanTimetable = (req, res) => {
   const BusBoy = require('busboy');
   const path = require('path');
   const os = require('os');
   const fs = require('fs');
+  const unirest = require('unirest');
 
   const busboy = new BusBoy({ headers: req.headers });
 
-  let imageFileName;
-  let imageToBeUploaded = {};
+  let filepath = "";
 
   busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
     if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
       return res.status(400).json({ error: 'Wrong file type submitted' });
     }
-    // my.image.png
-    const imageExtension = filename.split('.')[filename.split('.').length - 1];
-    // timetable-139588618986.png
-    imageFileName = `timetable-${Math.round( Math.random() * Date.now() )}.${imageExtension}`;
-    //tmpdir because we're working with functions, not an actual server
-    const filepath = path.join(os.tmpdir(), imageFileName);
-    imageToBeUploaded = { filepath, mimetype };
+    filepath = path.join(os.tmpdir(), filename);
     file.pipe(fs.createWriteStream(filepath));
   });
-  busboy.on('finish', () => {
-    admin
-      .storage()
-      .bucket()
-      .upload(imageToBeUploaded.filepath, {
-        resumable: false,
-        metadata: {
-          metadata: {
-            contentType: imageToBeUploaded.mimetype
-          }
-        }
-      })
-      .then(() => {
-        const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${config.storageBucket}/o/${imageFileName}?alt=media`;
-        return db.doc(`/users/${req.user.matric}`).update({ imageUrl });
-      })
-      .then(() => {
-        return res.json({ message: 'Image uploaded successfully' });
-      })
-      .catch((err) => {
-        console.error(err);
-        return res.status(500).json({ error: err.code });
-      });
+
+  busboy.on('finish', function() {
+    unirest.post('https://microsoft-azure-microsoft-computer-vision-v1.p.rapidapi.com/ocr')
+    .headers({
+        "X-RapidAPI-Host": "microsoft-azure-microsoft-computer-vision-v1.p.rapidapi.com",
+        "X-RapidAPI-Key": config.RapidAPIKey,
+        'Content-Type': 'multipart/form-data'
+    }).attach('file', filepath) // Attachment
+    .then(response => {
+      return res.status(200).json(response.body);
+    }).catch((err) => {
+      console.error(err);
+      return res.status(500).json({ error: err.code });
+    });;
   });
   busboy.end(req.rawBody);
 };
 
+// exports.uploadTimetable = (req, res) => {
+//   const BusBoy = require('busboy');
+//   const path = require('path');
+//   const os = require('os');
+//   const fs = require('fs');
 
+//   const busboy = new BusBoy({ headers: req.headers });
+
+//   let imageFileName;
+//   let imageToBeUploaded = {};
+
+//   busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
+//     if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
+//       return res.status(400).json({ error: 'Wrong file type submitted' });
+//     }
+//     // my.image.png
+//     const imageExtension = filename.split('.')[filename.split('.').length - 1];
+//     // timetable-139588618986.png
+//     imageFileName = `timetable-${Math.round( Math.random() * Date.now() )}.${imageExtension}`;
+//     //tmpdir because we're working with functions, not an actual server
+//     const filepath = path.join(os.tmpdir(), imageFileName);
+//     imageToBeUploaded = { filepath, mimetype };
+//     file.pipe(fs.createWriteStream(filepath));
+//   });
+//   busboy.on('finish', () => {
+//     admin
+//       .storage()
+//       .bucket()
+//       .upload(imageToBeUploaded.filepath, {
+//         resumable: false,
+//         metadata: {
+//           metadata: {
+//             contentType: imageToBeUploaded.mimetype
+//           }
+//         }
+//       })
+//       .then(() => {
+//         const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${config.storageBucket}/o/${imageFileName}?alt=media`;
+//         return db.doc(`/users/${req.user.matric}`).update({ imageUrl });
+//       })
+//       .then(() => {
+//         return res.json({ message: 'Image uploaded successfully' });
+//       }).then(() => {
+
+//       }).catch((err) => {
+//         console.error(err);
+//         return res.status(500).json({ error: err.code });
+//       });
+//   });
+//   busboy.end(req.rawBody);
+// };

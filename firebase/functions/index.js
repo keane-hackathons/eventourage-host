@@ -6,7 +6,7 @@ app.use(cors());
 const authMiddleware = require('./util/authMiddleware');
 
 const { getAllSlots, makeASlot } = require("./handlers/slots");
-const { signup, login, uploadTimetable } = require("./handlers/users");
+const { signup, login, scanTimetable } = require("./handlers/users");
 
 // Donations route
 app.get('/slots', getAllSlots);
@@ -15,7 +15,7 @@ app.post('/makeslot', authMiddleware, makeASlot);
 // Users route
 app.post('/signup', signup);
 app.post('/login', login);
-app.post('/user/timetable', authMiddleware, uploadTimetable);
+app.post('/scanTimetable', authMiddleware, scanTimetable);
 
 // exports.getDonations = functions.https.onRequest((req, res) => { });
 // https://baseurl.com/api/_____
