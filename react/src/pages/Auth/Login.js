@@ -27,7 +27,7 @@ class Login extends Component {
           .post('/login', formValues)
           .then(res => {
             this.setState({loading: false});
-            this.props.history.push('/upload');
+            this.props.history.push('/app');
           })
           .catch(err => {
             this.setState({

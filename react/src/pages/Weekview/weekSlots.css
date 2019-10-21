@@ -48,9 +48,20 @@
   top: -5px;
 }
 
-.title-bar .ant-typography {
+.title-bar .title-bar-R {
   float: right;
   padding-right: 3vw;
+}
+
+.title-bar .title-bar-R > * {
+  display: inline-block;
+}
+
+.title-bar-R .anticon-more {
+  font-size: 2em;
+  color: #8592A6;
+  background-color: #F0F2F6;
+  border-radius: 10px;
 }
 
 /* ------- MODULE SELECTION BAR ------- */
@@ -175,19 +186,14 @@
   background: linear-gradient(180deg, #3CD3AD 0%, #4CB8C4 100%);
 }
 
-.legend .color:nth-child(3) {
-  background: #D8D8D8;
-  background: linear-gradient(180deg, #D8D8D8 0%, #7B8BA3 100%);
-}
-
-.legend .color:nth-child(5),
+.legend .color:nth-child(3),
 .week .week-slots .booked {
   background: #F7ECD1;
   background: linear-gradient(180deg, #F7ECD1 0%, #EBB22E 100%);
   color: #293647;
 }
 
-.legend .color:nth-child(7),
+.legend .color:nth-child(5),
 .week .week-slots .clash {
   background: #FBAB7E;
   background: linear-gradient(180deg, #FBAB7E 0%, #FA5A3E 100%);

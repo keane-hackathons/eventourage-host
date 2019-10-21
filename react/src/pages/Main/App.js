@@ -20,9 +20,9 @@ class App extends Component {
 
         <div className="shelf"></div>
         <div className="btns-container">
-          <Button onClick={() => {this.props.history.push('/week')} }>book a<br/>mentor</Button>
-          <Button>view week<br/>schedule</Button>
-          <Button>view past<br/>sessions</Button>
+          <Button onClick={() => {this.props.history.push('/week')} }>view my<br/>timetable</Button>
+          <Button>schedule<br/>meets</Button>
+          <Button>group<br/>schedules</Button>
 
         </div>
 

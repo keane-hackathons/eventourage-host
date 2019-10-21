@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import {Typography, Button, Upload, message } from 'antd';
+import {Typography, Button, Icon,  Upload, message } from 'antd';
+import './uploadFile.css'
+import sampleImg from './sample.png'
 
 const { Title } = Typography;
 
@@ -45,19 +47,28 @@ class UploadFile extends Component {
   }
   render() {
     return (
-      <>
-        <div>
-          <Title level={2}>Hey there!</Title>
-          <Title level={4}>We see you're new here.</Title>
-          <p>Let us know your timetable?</p>
+      <div className="upload-page">
+        <div className="title-bar">
+          <Button type="link" onClick={() => { this.props.history.push("/week") }}>
+            <Icon type="left" /> timetable
+          </Button>
+          <div className="title-bar-R">
+            <Title level={3}>Reupload</Title>
+          </div>
+        </div>
+        <div className="intrucst-text">
+          <Title level={2}>New timetable?</Title>
+          <Title level={4}>Take a screenshot of your registered<br/>modules and like the one below 👇🏻</Title>
         </div>
 
-        <Upload onChange={this.handleUpload}>
-          <Button type="primary"> Upload
+        <img className="sample-img" src={sampleImg} alt={"Sample"} />
+
+        <Upload onChange={this.handleUpload} >
+          <Button className="upload-timetable-btn" type="primary"> Upload
             {/* <input onChange={(e) =>  this.handleUpload(e)} type="file" /> */}
           </Button>
         </Upload>
-      </>
+      </div>
     );
   }
 }

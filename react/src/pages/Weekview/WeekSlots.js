@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Button, Icon, Typography, Drawer, TimePicker } from 'antd';
+import { Button, Icon, Typography, Menu, Dropdown, Drawer, TimePicker } from 'antd';
 import './weekSlots.css';
 
 const { Title } = Typography;
@@ -24,19 +24,33 @@ export class WeekSlots extends Component {
   };
 
   render() {
+    const menu = (
+      <Menu>
+        <Menu.Item key="0">
+          <a href="/upload">Reupload Timetable</a>
+        </Menu.Item>
+      </Menu>
+    );
     return (
       <div className="week-page">
         <div className="title-bar">
         <Button type="link" onClick={() => { this.props.history.push("/app") }}>
           <Icon type="left" /> home
         </Button>
-        <Title level={3}>Book mentor</Title>
+        <div className="title-bar-R">
+          <Title level={3}>Timetable</Title>
+          <Dropdown overlay={menu} trigger={['click']} placement="bottomRight">
+            <a className="ant-dropdown-link" href="#">
+              <Icon type="more"/>
+            </a>
+          </Dropdown>
+        </div>
         </div>
         <div className="module">
-          <Button type="link" onClick={this.showDrawer}>
+          {/* <Button type="link" onClick={this.showDrawer}>
             {this.state.module}
             <Icon type="pic-center" style={{color: "#8592A6"}}/>
-          </Button>
+          </Button> */}
           <Drawer
             title="Module you need help with?"
             placement="top"
@@ -60,19 +74,17 @@ export class WeekSlots extends Component {
             <div><small>24 SEP</small><p>FRI</p></div>
             <div><small>25 SEP</small><p>SAT</p></div>
             <div><small>26 SEP</small><p>SUN</p></div>
-            <Button className="clash">08:30</Button><Button className="clash"/><Button className="clash"/><Button className="avail"/><Button className="avail"/><Button/><Button/>
+            <Button className="clash">08:30</Button><Button className="clash"/><Button className="clash"/><Button className="avail"/><Button className="avail"/><Button className="avail"/><Button className="avail"/>
             <Button className="avail">09:30</Button><Button className="avail"/><Button className="avail"/><Button className="clash"/><Button className="avail"/><Button className="avail"/><Button className="avail"/>
-            <Button className="avail">10:30</Button><Button className="clash"/><Button className="clash"/><Button className="avail"/><Button className="avail"/><Button/><Button className="avail"/>
-            <Button className="clash">11:30</Button><Button className="clash"/><Button className="clash"/><Button className="clash"/><Button className="avail"/><Button className="avail"/><Button/>
+            <Button className="avail">10:30</Button><Button className="clash"/><Button className="clash"/><Button className="avail"/><Button className="avail"/><Button className="avail"/><Button className="avail"/>
+            <Button className="clash">11:30</Button><Button className="clash"/><Button className="clash"/><Button className="clash"/><Button className="avail"/><Button className="avail"/><Button className="avail"/>
           </div>
         </div>
         <div className="legend">
           <div className="color"/>
           <div className="legee">Mentor Available</div>
           <div className="color"/>
-          <div className="legee">No Mentor Signed Up</div>
-          <div className="color"/>
-          <div className="legee">Booked</div>
+          <div className="legee">Selected</div>
           <div className="color"/>
           <div className="legee">Clash with timetable</div>
         </div>
