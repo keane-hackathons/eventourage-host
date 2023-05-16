@@ -1,0 +1,29 @@
+
+/* ------- ACTIONS HUB ------- */
+
+.actions-hub {
+    width: 100%;
+    margin-top: 2vh;
+  }
+  
+  .actions-hub .ant-tabs-tab {
+    color: #8592A6;
+  }
+  
+  /* ------- ACTIONS HUB - Indicator ------- */
+  .actions-hub .ant-tabs-ink-bar,
+  .actions-hub .ant-tabs-ink-bar-animated {
+    width: 45px !important;
+    height: 5px !important;
+    border-radius: 5px;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  }
+  
+  /* ------- ACTIONS HUB - Content (below) ------- */
+  .actions-hub .ant-tabs-tabpane {
+    font-weight: bold;
+    color: #8592A6;
+    font-size: 1.3rem;
+    text-align: center;
+  }
