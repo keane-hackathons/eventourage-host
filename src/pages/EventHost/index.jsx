@@ -3,6 +3,7 @@ import { Button, Typography, Dropdown, Space } from "antd";
 import { LeftOutlined, MoreOutlined } from '@ant-design/icons';
 import "./EventHost.css"
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Button as RemoteButton } from "remoteRacer/Button"
 
 function EventHost () {
   const location = useLocation();
@@ -30,6 +31,7 @@ function EventHost () {
           </Dropdown>
         </div>
       </div>
+      <RemoteButton/>
     </div>
    )
 }
