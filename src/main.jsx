@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
+import EventHost from "./pages/EventHost";
 import "./index.css";
-
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Home />}>
-      <Route index element={<Home />} />
-    </Route>
-  )
-)
+import { GlobalStyle } from "./components/GlobalStyle";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <GlobalStyle>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="event" element={<EventHost />} />
+        </Routes>
+      </Router>
+    </GlobalStyle>
   </React.StrictMode>
 );

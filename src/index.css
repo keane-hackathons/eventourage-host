@@ -42,6 +42,10 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 .ant-input {
   border-radius: 25px;

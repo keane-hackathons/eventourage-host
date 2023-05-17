@@ -7,6 +7,9 @@ export const GlobalStyle = (props) => {
       theme={{
         token: {
           fontFamily: "Gotham",
+          colorLink: "#293647",
+          colorLinkHover: "#293647",
+          colorLinkActive: "#293647",
         },
       }}
     >
