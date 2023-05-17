@@ -17,6 +17,7 @@ export const ActionsHub = (props) => {
         <Tabs 
           defaultActiveKey="1" 
           tabBarGutter={15} 
+          animated={true}
           tabBarStyle={{
             fontWeight: "bold",
           }}

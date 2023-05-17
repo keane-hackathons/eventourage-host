@@ -11,10 +11,7 @@ function Home() {
     <GlobalStyle>
       <div className="App">
         <div className="profile-bar">
-          <div>
-            <Title level={2}>Hey Johnson,</Title>
-            <Title style={{color: "#8592A6"}} level={3}>What shall we do?</Title>
-          </div>
+          <Title level={2}>Your Collection</Title>
           <div className="profile-pic"></div>
         </div>
 
@@ -50,7 +47,7 @@ function Home() {
             {
               key: '2',
               label: `Upcoming`,
-              children: <><br/><br/>Hmm... Nothing here.</>,
+              children: <><br/><br/>Hmm... Nothing here too.</>,
             },
           ]}
         />

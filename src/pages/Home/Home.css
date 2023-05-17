@@ -4,17 +4,15 @@
 
 /* ------- PROFILE ------- */
 .profile-bar {
-  height: 12vh;
   padding-top: 3.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .profile-bar h2.ant-typography,
 .profile-bar h3.ant-typography{
   margin: 0;
-}
-
-.profile-bar > div {
-  display: inline-block;
 }
 
 .profile-pic {
