@@ -19,6 +19,7 @@ function Home() {
           background="#B7D1FA"
           shadow="rgba(183,209,250,0.35)"
           title="F1 Racer Collection"
+          path="f1-racer"
         >
           F1 Racer<br/>Collection
         </CollectionTile>

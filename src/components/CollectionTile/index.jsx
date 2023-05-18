@@ -4,8 +4,9 @@ import { Button, ConfigProvider } from "antd";
 import "./CollectionTile.css";
 
 export const CollectionTile = (props) => {
+  const { shadow, path, title, background, children } = props
   const navigate = useNavigate()
-  const boxShadow = `0px 20px 20px 0px ${props.shadow}`;
+  const boxShadow = `0px 20px 20px 0px ${shadow}`;
   return (
     <ConfigProvider
       theme={{
@@ -15,15 +16,15 @@ export const CollectionTile = (props) => {
       }}
     >
       <Button
-        onClick={() => navigate('/event', { state: {title: props.title} })}
+        onClick={() => navigate(`event/${path ?? ''}`, { state: { title } })}
         style={{
-          backgroundColor: props.background,
+          backgroundColor: background,
           boxShadow,
           WebkitBoxShadow: boxShadow,
           MozBoxShadow: boxShadow,
         }}
       >
-        {props.children}
+        {children}
       </Button>
     </ConfigProvider>
   );
