@@ -9,6 +9,7 @@ export default defineConfig({
       name: "eventourage-app",
       remotes: {
         remoteRacer: "http://localhost:5001/assets/remoteEntry.js",
+        remoteAmongUs: "http://localhost:5003/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom"],
     }),

@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home";
 import EventLayout from "./pages/EventLayout";
 import RacerGame from "remoteRacer/RacerGame";
+import AmongUs from "remoteAmongUs/AmongUs";
 import "./index.css";
 import { GlobalStyle } from "./components/GlobalStyle";
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="event" element={<EventLayout />}>
         <Route path="f1-racer" element={<RacerGame />} />
+        <Route path="among-us" element={<AmongUs />} />
       </Route>
     </Route>
   )

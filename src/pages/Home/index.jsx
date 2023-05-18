@@ -34,6 +34,7 @@ function Home() {
           background="#F8E2A9"
           shadow="rgba(247,206,104,0.35)"
           title="Heineken Vegaland"
+          path="among-us"
         >
           Heineken<br/>Vegaland
         </CollectionTile>
