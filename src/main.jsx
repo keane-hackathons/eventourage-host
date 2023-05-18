@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import EventLayout from "./pages/EventLayout";
-import Button from "remoteRacer/Button";
+import RacerGame from "remoteRacer/RacerGame";
 import "./index.css";
 import { GlobalStyle } from "./components/GlobalStyle";
 
@@ -17,7 +17,7 @@ const router = createBrowserRouter(
     <Route path="/">
       <Route index element={<Home />} />
       <Route path="event" element={<EventLayout />}>
-        <Route path="f1-racer" element={<Button />} />
+        <Route path="f1-racer" element={<RacerGame />} />
       </Route>
     </Route>
   )
