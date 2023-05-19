@@ -20,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="event" element={<EventLayout />}>
         <Route path="f1-racer" element={<RacerGame />} />
         <Route path="among-us" element={<AmongUs />} />
+        <Route path="ghost-generator" element={<iframe src="https://iframe-ghostgenerator-sg.heineken.com/" width="100%" height="100%" />}/>
       </Route>
     </Route>
   )

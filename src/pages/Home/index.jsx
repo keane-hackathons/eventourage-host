@@ -26,17 +26,18 @@ function Home() {
         <CollectionTile
           background="#CCEEFF"
           shadow="rgba(156,222,255,0.35)"
-          title="Heineken Silver Event"
+          title="Heineken Ghost Bar"
+          path="ghost-generator"
         >
-          Heineken<br/>Silver Event
+          Heineken<br/>Ghost Bar
         </CollectionTile>
         <CollectionTile
           background="#F8E2A9"
           shadow="rgba(247,206,104,0.35)"
-          title="Heineken Vegaland"
+          title="Heineken Among Us"
           path="among-us"
         >
-          Heineken<br/>Vegaland
+          Heineken<br/>Among Us
         </CollectionTile>
       </div>
 
