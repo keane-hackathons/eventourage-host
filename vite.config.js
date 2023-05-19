@@ -8,8 +8,8 @@ export default defineConfig({
     federation({
       name: "eventourage-app",
       remotes: {
-        remoteRacer: "http://localhost:5001/assets/remoteEntry.js",
-        remoteAmongUs: "http://localhost:5003/assets/remoteEntry.js",
+        remoteRacer: "https://eventourage-remote-racer.apps.tas.tz-hackathon.net/assets/remoteEntry.js",
+        remoteAmongUs: "https://eventourage-remote-amongus.apps.tas.tz-hackathon.net/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom"],
     }),
