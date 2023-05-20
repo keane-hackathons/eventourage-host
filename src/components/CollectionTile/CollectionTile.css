@@ -10,6 +10,8 @@
     color: #293647;
     font-size: 1.2rem;
     text-align: right;
+    border-radius: 25px;
+    border: none;
   }
   
   .btns-container .ant-btn span {

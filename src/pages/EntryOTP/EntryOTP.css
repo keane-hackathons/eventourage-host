@@ -1,0 +1,59 @@
+#recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.otp-wrapper {
+  background: white;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.otp-wrapper p {
+  font-weight: 300;
+  margin: 3rem;
+}
+
+@media (orientation: landscape) {
+  .otp-wrapper {
+    min-width: 400px;
+    width: 500px;
+    max-width: 50%;
+    height: 80vh;
+    margin: 2rem auto;
+    border-radius: 3rem;
+  }
+}
+
+@media (orientation: portrait) {
+  .otp-wrapper {
+    margin: 0 auto;
+    width: 92vw;
+    height: 93vh;
+  }
+}
+
+.ant-input-wrapper > * {
+  height: 3rem;
+}
+
+.ant-input-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.link-wrapper {
+  width: 80%;
+}
+
+.link-wrapper .ant-btn-default {
+  background-color: #001122;
+}
+
+.link-wrapper > * {
+  height: 3rem;
+}

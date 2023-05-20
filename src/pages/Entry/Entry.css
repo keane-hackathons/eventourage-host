@@ -1,0 +1,54 @@
+.backdrop {
+  position: fixed;
+  z-index: -1;
+}
+
+@media (orientation: landscape) {
+  .backdrop {
+    width: 150%;
+  }
+}
+
+@media (orientation: portrait) {
+  .backdrop {
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin:top left;
+    width: 200%;
+  }
+}
+
+.slogan {
+  position: fixed;
+  top: 35%;
+  right: 0;
+  margin-right: 2vw;
+  text-align: right;
+}
+
+.btns-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  width: 100%;
+  margin-bottom: 8vh;
+  text-align: center;
+}
+
+.btns-box .ant-btn:nth-child(3){
+  color: #001122;
+}
+
+.btns-box .ant-btn:nth-child(3) span:after,
+.btns-box .ant-btn:nth-child(3) span:after {
+  content: '';
+  width: 0px;
+  height: 3px;
+  display: block;
+  background: #80E572;
+  transition: ease-in-out all 180ms;
+}
+
+.btns-box .ant-btn:nth-child(3):hover span:after,
+.btns-box .ant-btn:nth-child(3):hover span:after {
+  width: 100%;
+}

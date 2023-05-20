@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, ConfigProvider } from "antd";
+import { Button } from "antd";
 import "./CollectionTile.css";
 
 export const CollectionTile = (props) => {
@@ -8,24 +8,16 @@ export const CollectionTile = (props) => {
   const navigate = useNavigate()
   const boxShadow = `0px 20px 20px 0px ${shadow}`;
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimaryHover: "#293647",
-        },
+    <Button
+      onClick={() => navigate(`event/${path ?? ''}`, { state: { title } })}
+      style={{
+        backgroundColor: background,
+        boxShadow,
+        WebkitBoxShadow: boxShadow,
+        MozBoxShadow: boxShadow,
       }}
     >
-      <Button
-        onClick={() => navigate(`event/${path ?? ''}`, { state: { title } })}
-        style={{
-          backgroundColor: background,
-          boxShadow,
-          WebkitBoxShadow: boxShadow,
-          MozBoxShadow: boxShadow,
-        }}
-      >
-        {children}
-      </Button>
-    </ConfigProvider>
+      {children}
+    </Button>
   );
 };
